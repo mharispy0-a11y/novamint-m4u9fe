@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaMint | Solana NFT Project</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #080812; color: white; }
+    nav { padding: 20px; background: #111122; display: flex; gap: 18px; }
+    a { color: #8cf7ff; text-decoration: none; }
+    main { padding: 50px; }
+    .card { background: #15152a; padding: 24px; border-radius: 16px; max-width: 760px; }
+    button { padding: 14px 22px; border-radius: 10px; border: 0; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="collection.html">Collection</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <main>
+    <div class="card">
+      <h1>NovaMint</h1>
+      <p>Solana NFT launch website running on devnet.</p>
+      <button onclick="connectWallet()">Connect Phantom</button>
+      <p id="wallet-status">Wallet not connected.</p>
+      <p><strong>Security Notice:</strong> Always verify wallet actions before approving transactions.</p>
+    </div>
+  </main>
+  <script>
+    async function connectWallet() {
+      const status = document.getElementById('wallet-status');
+      if (window.solana && window.solana.isPhantom) {
+        status.textContent = 'Phantom detected. Wallet connection can be enabled.';
+      } else {
+        status.textContent = 'Phantom wallet not detected.';
+      }
+    }
+  </script>
+</body>
+</html>
